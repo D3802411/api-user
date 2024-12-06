@@ -1,5 +1,29 @@
-controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+api_user:
+  path: /api/user
+  controller: App\Controller\UserController::index
+  methods: GET
+
+user_id:
+  path: /api/user/{id}
+  controller: App\Controller\UserController::show
+  methods: [GET]
+
+create_user:
+  path: /api/user
+  controller: App\Controller\UserController::create
+  methods: POST
+
+update_user:
+  path: /api/user/{id}
+  controller: App\Controller\UserController::update
+  methods: PUT
+
+delete_user:
+  path: /api/user/{id}
+  controller: App\Controller\UserController::delete
+  methods: DELETE
+
+login:
+  path: /api/login
+  controller: Lexik\Bundle\JWTAuthenticationBundle\Controller\AuthenticationController::getToken
+  methods: POST
